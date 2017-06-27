@@ -88,16 +88,22 @@
                 <a href="index.html#introduction">Introduction</a>
               </li>
               <li class="nav-item">
-                <a href="index.html#installation">Installation</a>
+                <a href="index.html#why-hiproxy">Why hiproxy</a>
               </li>
               <li class="nav-item">
-                <a href="index.html#compiling">Custom version</a>
+                <a href="index.html#features">Features</a>
               </li>
               <li class="nav-item">
-                <a href="index.html#browsers">Browser support</a>
+                <a href="index.html#install">Install</a>
               </li>
               <li class="nav-item">
-                <a href="index.html#whatsnew">What's new</a>
+                <a href="index.html#usage">Usage</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#node.js-api">Node.js API</a>
+              </li>
+              <li class="nav-item">
+                <a href="index.html#cli-commands-options">CLI commands and options</a>
               </li>
             </ul>
           </li>
@@ -123,7 +129,138 @@
             <h3><a href="#introduction" class="anchor" aria-hidden="true">#</a>Introduction</h3>
           </header>
           <section class="notes">
-            <p>Coming soon.</p>
+            <p>
+              hiproxy is a lightweight web proxy tool based on Node.js. The main purpose is to solve the problem of *host management* and *reverse proxy* encountered by multiple developers during the development process. So that in the development, no longer need to modify the system hosts and start a Nginx service. Hiproxy extends the syntax of hosts to support port numbers. In addition, hiproxy also supports the configuration of proxies through a syntax similar to the nginx configuration file.
+            </p>
+          </section>
+        </section>
+
+
+        <section id="why-hiproxy" class="container">
+          <header class="text-center">
+            <h3><a href="#why-hiproxy" class="anchor" aria-hidden="true">#</a>Why hiproxy</h3>
+          </header>
+          <section class="notes">
+            <p>
+              在前端开发中，如果我们通常会遇到下面的一些问题：<br/>
+
+              1. 调试线上页面问题，要在本地进行开发，需要能运行后端的项目（Node.js或者Java等项目），前端工程师在本地搭建一套后端环境，可能代价比较大。<br/>
+              2. 如果有多个前端工程，采用一个域名，部分工程需要请求线上资源，部分工程请求本地。<br/>
+              3. 为解决跨域等问题，本地开发时需要修改Response Header。<br/>
+              4. 本地开发https站点时，证书不受信任。<br/>
+              5. 系统hosts修改后，不会立即生效。<br/><br/>
+
+              我们会使用Nginx来解决上面的问题。Nginx很优秀，也是我们前端开发工程师的一个非常好的朋友。Nginx的配置文件风格，非常直观，编写配置效率很高。<br/><br/>
+
+              但是，使用Nginx的时候，我们同时需要使用hosts，把相关请求发送到本地的Nginx服务。<br/><br/>
+
+              此外，大部分情况下，Nginx的配置文件并不会被提交到代码仓库，所以团队中其他开发者之间会互相拷贝配置文件，这样效率比较低，而且一个人修改了配置文件，其他人的配置不会随之更新。对于多个域名的配置，也都是放到一个统一的目录，然后在主配置里面include，这样也不太方便。<br/><br/>
+
+              hosts、反向代理、https和缓存这些琐碎的事情，能不能统一解决？<br/><br/>
+
+              于是有了hiproxy。
+            </p>
+          </section>
+        </section>
+
+        <section id="features" class="container">
+          <header class="text-center">
+            <h3><a href="#features" class="anchor" aria-hidden="true">#</a>Features</h3>
+          </header>
+          <section class="notes">
+            <p>
+              * 支持Nginx风格的配置文件格式，配置简单直观<br/>
+              * 支持hosts以及扩展（支持端口号）<br/>
+              * 支持插件扩展rewrite指令、CLI命令和页面<br/>
+              * 支持HTTPS证书自动生成<br/>
+              * 支持代理自动配置（Proxy auto-config）<br/>
+              * 支持后台启动，日志输出到文件<br/>
+              * 支持配置文件自动查找<br/>
+              * 支持打开浏览器窗口并自动配置代理<br/>
+              * 提供Node.js API<br/>
+              * ...
+            </p>
+          </section>
+        </section>
+
+        <section id="install" class="container">
+          <header class="text-center">
+            <h3><a href="#install" class="anchor" aria-hidden="true">#</a>Install</h3>
+          </header>
+          <section class="notes">
+            <pre class="code" data-lang="bash"><code>npm install -g hiproxy</code></pre>
+          </section>
+        </section>
+
+        <section id="usage" class="container">
+          <header class="text-center">
+            <h3><a href="#usage" class="anchor" aria-hidden="true">#</a>Usage</h3>
+          </header>
+          <section class="notes">
+            <h4>1. Start proxy server</h4>
+            <pre class="code" data-lang="bash"><code>hiproxy start -p 5525 --debug --workspace &lt;path-to-your-workspace&gt;</code></pre>
+          
+            <h4>2. Config proxy</h4>
+            <pre class="code" data-lang="bash"><code>127.0.0.1:5525</code></pre>
+          </section>
+        </section>
+
+        <section id="node.js-api" class="container">
+          <header class="text-center">
+            <h3><a href="#node.js-api" class="anchor" aria-hidden="true">#</a>Node.js API</h3>
+          </header>
+          <section class="notes">
+            <pre class="code" data-lang="bash"><code>var HiProxyServer = require('hiproxy');
+var proxy = new HiProxyServer(8848, 10086);
+
+// events
+proxy.on('request', function(req, res){
+  req.someThing = 'some thing';
+  console.log('new request =>', req.method, req.url);
+});
+
+proxy.on('data', function(data){
+  console.log('on response =>', data.toString());
+});
+
+proxy.start().then(function (servers) {
+  console.log('proxy server started at: 127.0.0.1:8848');
+});
+
+// stop proxy server
+// proxy.stop();
+
+// restart proxy server
+// proxy.restart();</code></pre>
+          </section>
+        </section>
+
+
+        <section id="cli-commands-options" class="container">
+          <header class="text-center">
+            <h3><a href="#cli-commands-options" class="anchor" aria-hidden="true">#</a>CLI commands and options
+</h3>
+          </header>
+          <section class="notes">
+            <pre class="code" data-lang="bash"><code>> hiproxy --help
+
+Commands:
+
+  start   Start a local proxy server
+  stop    Stop the local proxy server
+  restart  Restart the local proxy server
+  state   Show all the servers state
+  open    Open browser and set proxy
+
+Options:
+
+  -v, --version     显示版本信息
+  -h, --help        显示帮助信息
+  -D, --daemon      后台运行
+  --log-dir         后台运行时日志存放路径（绝对路径），默认为用户目录
+  --log-time        显示日志时间
+  --log-level       过滤日志级别，只有指定级别的日志才会显示
+  --grep <content>  过滤日志内容，只有保护过滤字符串的日志才会显示</code></pre>
           </section>
         </section>
     </section>
