@@ -2,6 +2,7 @@
 body{
   font-family: "Slabo 27px",Georgia, Helvetica,Arial,sans-serif!important;
   font-size: 16px;
+  font-weight: 200;
 }
 /* Spectre docs style */
 .bg-gray {
