@@ -1,0 +1,35 @@
+site_name: hiproxy
+theme: null
+theme_dir: 'custom_theme'
+
+repo_url: 'https://github.com/hiproxy/hiproxy'
+
+pages:
+- Home: 'index.md'
+- Get Started:
+    - 'Introduction': 'get_started/introduction.md'
+    - 'Installation': 'get_started/installation.md'
+    - 'Run Examples': 'get_started/run_example.md'
+    - 'Applied to existing projects': 'get_started/play_with_your_projects.md'
+    - 'CLI Options': 'get_started/cli_options.md'
+- Configuration:
+    - 'Configuration Introduction': 'configuration/introduction.md'
+    - 'Configuration file lookup': 'configuration/find_conf.md'
+    - 'hosts': 'configuration/hosts.md'
+    - 'rewrite': 'configuration/rewrite.md'
+    - 'SSL/TLS Certificate': 'configuration/ssl_certificate.md'
+- Rewrite:
+    - 'Introduction': 'configuration/rewrite_introduction.md'
+    - 'Scope': 'configuration/rewrite_scope.md'
+    - 'Directive': 'configuration/rewrite_directive.md'
+    - 'Built-in Variables': 'configuration/rewrite_built_in_variable.md'
+- Node.js API:
+    - 'API': 'api/api.md'
+    - 'Events': 'api/events.md'
+- Developer:
+    - 'Plugin': 'developer/plugin.md'
+    - 'Extend Command': 'developer/cli_command.md'
+    - 'Extend Directive': 'developer/rewrite_directive.md'
+    - 'Extend Route': 'developer/route.md'
+- FAQs:
+    - 'FAQs': 'faqs.md'
