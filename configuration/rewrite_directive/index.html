@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Directive - hiproxy</title>
+        <title>内置指令 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../get_started/introduction/">Introduction</a>
+    <a href="../../get_started/introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../../get_started/installation/">Installation</a>
+    <a href="../../get_started/installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../../get_started/run_example/">Run Examples</a>
+    <a href="../../get_started/run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/play_with_your_projects/">Applied to existing projects</a>
+    <a href="../../get_started/applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/cli_options/">CLI Options</a>
+    <a href="../../get_started/cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../introduction/">Configuration Introduction</a>
+    <a href="../introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../find_conf/">Configuration file lookup</a>
+    <a href="../find_conf/">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../rewrite_introduction/">Introduction</a>
+    <a href="../rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../rewrite_scope/">Scope</a>
+    <a href="../rewrite_scope/">作用域</a>
 </li>
                             
 <li class="active">
-    <a href="./">Directive</a>
+    <a href="./">内置指令</a>
 </li>
                             
 <li >
-    <a href="../rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -208,145 +208,137 @@
 </blockquote>
 <h2 id="_1">指令</h2>
 <p><code>指令</code>（也称：<code>命令</code>）用于设置变量，或者对request/response做一些操作。</p>
-<h3 id="_2">全局指令</h3>
-<p>全局指令，用来在全局作用域中做一些配置。</p>
-<h4 id="set">set</h4>
-<p><em>作用</em>：定义变量</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：变量名称
-value：值
-</code></pre>
-
-<p><em>例子</em>：</p>
+<h3 id="set">set</h3>
+<p>描述：定义变量</p>
+<p>语法：<strong>set</strong> key value</p>
+<p><strong>作用域链</strong>：global, domain, location</p>
+<p>例子：</p>
 <pre><code class="bash">set $server hiipack;
 </code></pre>
 
-<h3 id="_3">代理请求相关指令</h3>
+<h3 id="_2">代理请求相关指令</h3>
 <p>代理请求相关的指令，用于操作代理服务向目标服务器发送请求的<code>Request</code>对象。</p>
-<h4 id="proxy_pass">proxy_pass</h4>
-<p><em>作用</em>：设置请求转发的目标地址</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">url：要转发的地址
+<p><strong>作用域链</strong>：domain, location</p>
+<h4 id="proxy_set_header">* proxy_set_header</h4>
+<p>描述：设置请求头部字段</p>
+<p>语法：<strong>proxy_set_header</strong> key value</p>
+<p>例子：</p>
+<pre><code class="bash">proxy_set_header Host some.example.com;
 </code></pre>
 
-<p><em>例子</em>：</p>
-<pre><code class="bash">proxy_pass http://some.example.com/some/path/;
+<h4 id="proxy_hide_header">* proxy_hide_header</h4>
+<p>描述：删除请求头部字段</p>
+<p>语法：<strong>proxy_hide_header</strong> key</p>
+<p>例子：</p>
+<pre><code class="bash">proxy_hide_header Host;
 </code></pre>
 
-<h4 id="proxy_set_header">proxy_set_header</h4>
-<p><em>作用</em>：设置请求头部字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：字段名称
-value：字段值
-</code></pre>
-
-<p><em>例子</em>：</p>
-<pre><code class="bash">proxy_set_header Host some.example.com
-</code></pre>
-
-<h4 id="proxy_hide_header">proxy_hide_header</h4>
-<p><em>作用</em>：删除请求头部字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key: 要删除的字段名称
-</code></pre>
-
-<p><em>例子</em>：</p>
-<pre><code class="bash">proxy_set_header Host some.example.com
-</code></pre>
-
-<h4 id="proxy_set_cookie">proxy_set_cookie</h4>
-<p><em>作用</em>：设置请求Cookie</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Cookie名称
-value：Cookie值
-</code></pre>
-
-<p><em>例子</em>：</p>
+<h4 id="proxy_set_cookie">* proxy_set_cookie</h4>
+<p>描述：设置请求Cookie</p>
+<p>语法：<strong>proxy_set_cookie</strong> key value</p>
+<p>例子：</p>
 <pre><code class="bash">proxy_set_cookie from hiproxy;
 </code></pre>
 
-<h4 id="proxy_hide_cookie">proxy_hide_cookie</h4>
-<p><em>作用</em>：删除请求Cookie字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Cookie名称
-</code></pre>
-
-<p><em>例子</em>：</p>
+<h4 id="proxy_hide_cookie">* proxy_hide_cookie</h4>
+<p>描述：删除请求Cookie字段</p>
+<p>语法：<strong>proxy_hide_cookie</strong> key</p>
+<p>例子：</p>
 <pre><code class="bash">proxy_hide_cookie from;
 </code></pre>
 
-<h3 id="_4">代理响应相关指令</h3>
+<h3 id="_3">代理响应相关指令</h3>
 <p>代理响应相关的指令用于配置代理服务器响应浏览器的<code>Response</code>对象。</p>
-<h4 id="set_header">set_header</h4>
-<p><em>作用</em>：添加Header字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Header字段名称
-value：Header字段的值
-</code></pre>
-
-<p><em>例子</em>：</p>
+<p><strong>作用域链</strong>：domain, location</p>
+<h4 id="set_header">* set_header</h4>
+<p>描述：添加Header字段</p>
+<p>语法：<strong>set_header</strong> key value</p>
+<p>例子：</p>
 <pre><code class="bash">set_header SERVER hiproxy;
 </code></pre>
 
-<h4 id="hide_header">hide_header</h4>
-<p><em>作用</em>：删除Header字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Header字段名称
-</code></pre>
-
+<h4 id="hide_header">* hide_header</h4>
+<p>描述：删除Header字段</p>
+<p>语法：<strong>hide_header</strong> key</p>
 <p><em>例子</em>：</p>
-<pre><code class="bash">hide_header Server;
+<pre><code class="bash">hide_header SERVER;
 </code></pre>
 
-<h4 id="set_cookie">set_cookie</h4>
-<p><em>作用</em>：设置Cookie字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Cookie名称
-value：Cookie值
-</code></pre>
-
-<p><em>例子</em></p>
+<h4 id="set_cookie">* set_cookie</h4>
+<p>描述：设置Cookie字段</p>
+<p>语法：<strong>set_cookie</strong> key value</p>
+<p>例子</p>
 <pre><code class="bash">set_cookie SESSION_ID 2BF36A09CB35FD71E;
 </code></pre>
 
-<h4 id="hide_cookie">hide_cookie</h4>
-<p><em>作用</em>：删除Cookie字段</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">key：Cookie名称
-</code></pre>
-
+<h4 id="hide_cookie">* hide_cookie</h4>
+<p>描述：删除Cookie字段</p>
+<p>语法：<strong>hide_cookie</strong> key</p>
 <p><em>例子</em>：</p>
 <pre><code class="bash">hide_cookie SESSION_ID;
 </code></pre>
 
-<h4 id="alias">alias</h4>
-<p><em>作用</em>：将对应的<code>location</code>映射到本地目录</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">path：本地路径，绝对路径
-</code></pre>
-
-<p><em>例子</em>：</p>
-<pre><code class="bash">alias /Users/zdying/some/path/;
-</code></pre>
-
-<h4 id="send_file">send_file</h4>
-<p><em>作用</em>：返回指定的文件</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">file_name：文件名称
-</code></pre>
-
-<p><em>例子</em>：</p>
+<h4 id="send_file">* send_file</h4>
+<p>描述：返回指定的文件</p>
+<p>语法：<strong>send_file</strong> file_name</p>
+<p>例子：</p>
 <pre><code class="bash">send_file index.html;
+send_file /site/index.html;
 </code></pre>
 
-<h4 id="root">root</h4>
-<p><em>作用</em>：将对应的<code>location</code>映射到本地目录时的默认文件</p>
-<p><em>参数</em>：</p>
-<pre><code class="bash">file_name：文件名称, 默认`index.html`
+<h4 id="echo">* echo</h4>
+<p>描述：返回指定内容</p>
+<p>语法：<strong>echo</strong> string</p>
+<p>例子：</p>
+<pre><code class="bash">echo &lt;h1&gt;hello_echo&lt;/h1&gt;;
+echo &lt;p&gt;finish&lt;/p&gt;;
 </code></pre>
 
+<h3 id="domain">domain内部指令</h3>
+<p>只在同一个domain内有效，且覆盖全局同名指令</p>
+<p><strong>作用域链</strong>：domain</p>
+<h4 id="ssl_certificate">* ssl_certificate</h4>
+<p>描述：手动指定证书文件</p>
+<p>参数：<strong>ssl_certificate</strong> file.crt（只支持相对路径，后期完善）</p>
+<p>例子：</p>
+<pre><code class="bash">example.com =&gt; {
+    ssl_certificate /user/root/.hiproxy/cert/example.crt;
+}
+
+</code></pre>
+
+<h4 id="ssl_certificate_key">* ssl_certificate_key</h4>
+<p>描述：手动指定私钥文件</p>
+<p>参数：<strong>ssl_certificate_key</strong> file.key（只支持相对路径，后期完善）</p>
+<p>例子：</p>
+<pre><code class="bash">example.com =&gt; {
+    ssl_certificate_key /user/root/.hiproxy/cert/example.key;
+}
+
+</code></pre>
+
+<h3 id="location">location内部指令</h3>
+<p>只在同一个location内有效，且覆盖全局及domain同名指令</p>
+<p><strong>作用域链</strong>：domain, location</p>
+<h4 id="proxy_pass">* proxy_pass</h4>
+<p>描述：设置请求转发的目标地址</p>
+<p>参数：<strong>proxy_pass</strong> url</p>
+<p>例子：</p>
+<pre><code class="bash">proxy_pass http://some.example.com/some/path/;
+</code></pre>
+
+<h4 id="alias">* alias</h4>
+<p>描述：将对应的<code>location</code>映射到本地目录</p>
+<p>参数：<strong>alias</strong> path</p>
+<p>例子：</p>
+<pre><code class="bash">alias /Users/root/some/path/;
+</code></pre>
+
+<h4 id="root">* root</h4>
+<p>描述：将对应的<code>location</code>映射到本地目录时的默认文件，默认文件名为<code>index.html</code></p>
+<p>参数：<strong>root</strong> file_name</p>
 <p><em>例子</em>：</p>
-<pre><code class="bash">root index.html;
+<pre><code class="bash">root app.html;
 </code></pre></div>
         </div>
 

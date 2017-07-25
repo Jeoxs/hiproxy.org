@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Introduction - hiproxy</title>
+        <title>简介 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../get_started/introduction/">Introduction</a>
+    <a href="../../get_started/introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../../get_started/installation/">Installation</a>
+    <a href="../../get_started/installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../../get_started/run_example/">Run Examples</a>
+    <a href="../../get_started/run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/play_with_your_projects/">Applied to existing projects</a>
+    <a href="../../get_started/applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/cli_options/">CLI Options</a>
+    <a href="../../get_started/cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../introduction/">Configuration Introduction</a>
+    <a href="../introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../find_conf/">Configuration file lookup</a>
+    <a href="../find_conf/">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li class="active">
-    <a href="./">Introduction</a>
+    <a href="./">简介</a>
 </li>
                             
 <li >
-    <a href="../rewrite_scope/">Scope</a>
+    <a href="../rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../rewrite_directive/">Directive</a>
+    <a href="../rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -198,7 +198,7 @@
         <li class="main active"><a href="#rewrite-introduction">Rewrite Introduction</a></li>
             <li><a href="#_1">简介</a></li>
             <li><a href="#_2">基本语法</a></li>
-            <li><a href="#_18">完整的例子</a></li>
+            <li><a href="#_18">更多例子</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -209,9 +209,9 @@
 <p>If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!</p>
 </blockquote>
 <h2 id="_1">简介</h2>
-<p><strong>rewrite</strong> 参考了类<a href="http://nginx.org/en/docs/">Nginx</a>配置语法，通过简单的配置，就可以帮助前端开发在本地调试的基础上，方便的利用其他环境或者线上的API接口进行测试。</p>
-<p><strong>hiproxy</strong> 同时支持项目<code>rewrite</code>及<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/hosts.md">hosts</a>文件。如果仅需要简单的<code>域名+端口</code>转发，请参考<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/hosts.md">hosts</a>。</p>
+<p><strong>rewrite</strong> 参考了<a href="http://nginx.org/en/docs/">Nginx</a>配置语法，通过简单的配置，就可以帮助前端开发在本地调试的基础上，方便的利用其他环境或者线上的API接口进行测试。</p>
 <p>当服务启动后，将自动扫描并监听各项目根目录下的<code>rewrite</code>文件，生成及实时更新转发规则，无需重启服务。</p>
+<p><strong>注</strong>：hiproxy同时支持项目<code>rewrite</code>及<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/hosts.md">hosts</a>文件。如果仅需要简单的<code>域名+端口</code>转发，请参考<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/hosts.md">hosts</a>。</p>
 <h2 id="_2">基本语法</h2>
 <h3 id="_3">变量</h3>
 <h4 id="_4">语法</h4>
@@ -250,7 +250,7 @@ $domain =&gt; {
 
 <h3 id="location">location</h3>
 <p>location 用来指定域名中的一个具体的路径，这个路径的所有配置都在 location 块中。</p>
-<p>注意：location必须位于domain块中。</p>
+<p><strong>注意</strong>：location必须位于domain块中。</p>
 <h4 id="_8">语法</h4>
 <pre><code class="bash">location [目录|文件|正则表达式|变量] {
     # ...
@@ -309,53 +309,53 @@ set_cookie UserID some_user_id;
 <pre><code class="bash">json.example.com =&gt; 127.0.0.1:8800;
 </code></pre>
 
-<h2 id="_18">完整的例子</h2>
-<pre><code class="bash">## url rewrite rules
-# page.example.com =&gt; hii.com;
-## json.example.com =&gt; 127.0.0.1:8800;
+<h2 id="_18">更多例子</h2>
+<pre><code class="bash">set $local 127.0.0.1:8800
+# simple rewrite rule
+api.hiproxy.org =&gt; local.hiproxy.org;
+api.hiproxy.org =&gt; 127.0.0.1:8800;
+api.hiproxy.org/mock =&gt; $local/mock;
+</code></pre>
 
-### rewrite folder
+<pre><code class="bash"># rewrite folder
+api.hiproxy.org/user/ =&gt; {
+    proxy_pass local.hiproxy.org/user/;
 
-# api.example.com/user/ =&gt; {
-#     proxy_pass other.example.com/user/;
-#
-#     ## proxy request config
-#     proxy_set_header host api.example.com;
-#     proxy_set_header other value;
-#     proxy_hide_header key;
-#
-#     proxy_set_cookie userid 20150910121359;
-#     proxy_hide_cookie sessionid;
-#
-#     ## response config
-#     set_header Access-Control-Allow-Origin *; 
-#
-#     # allow CORS
-#     set_cookie sessionID E3BF86A90ACDD6C5FF49ACB09;
-#     hide_header key;
-#     hide_cookie key;
-# }
+    # proxy request config
+    proxy_set_header Host api.hiproxy.org;
+    proxy_set_header other value;
+    proxy_hide_header other;
 
-## regexp support
-# ~ /\/(demo|example)\/([^\/]*\.(html|htm))$/ =&gt; {
-#    proxy_pass http://127.0.0.1:9999/$1/src/$2;
-#
-#    set_header Access-Control-Allow-Origin *;
-# }
+    proxy_set_cookie userid 20150910121359;
+    proxy_hide_cookie sessionid;
 
-## simple rewrite rule
-usercenter.example.com =&gt; $domain/test;
-flight.qunar.com/flight_qzz =&gt; 127.0.0.1:8800/flight_qzz;
+    # response config
+    set_cookie sessionID E3BF86A90ACDD6C5FF49ACB09;
+    set_header proxy hiproxy;
 
-set $domain api.example.com;
+    # allow CORS
+    set_header Access-Control-Allow-Origin *;
+
+    hide_header proxy;
+    hide_cookie sessionID;
+}
+</code></pre>
+
+<pre><code class="bash"># regexp support
+~ /\/(demo|example)\/([^\/]*\.(html|htm))$/ =&gt; {
+   proxy_pass http://127.0.0.1:9999/$1/src/$2;
+}
+</code></pre>
+
+<pre><code class="bash">set $domain api.hiproxy.org;
 set $local 127.0.0.1:8800;
-set $flight flight;
-set $test $flight.example.com;
+set $api api;
+set $test $api.example.com;
 set $id 1234567;
 
-## standard rewrite url
+# standard rewrite url
 $domain =&gt; {
-    proxy_pass http://127.0.0.1:8800/news/src/mock/;
+    proxy_pass http://$local/api/mock/;
     set $id 1234;
     set $mock_user user_$id;
     set_header Host $domain;
@@ -363,29 +363,44 @@ $domain =&gt; {
     set_header Access-Control-Allow-Origin *;
 }
 
-# api.example.com =&gt; {
-#     proxy_pass http://$local/news/src/mock/list.json;
-#     set_header Access-Control-Allow-Origin *;
-# }
-
-api.qunar.com =&gt; {
+blog.hiproxy.org =&gt; {
     set_header Access-Control-Allow-Origin *;
+
     set $node_server 127.0.0.1:3008;
     set $order order;
     set $cookie1 login=true;expires=20160909;
 
-    location /$flight/$order/detail {
+    location /$api/$order/detail {
         proxy_pass http://$node_server/user/?domain=$domain;
         set_header Set-Cookie userID 200908204140;
     }
 
     location ~ /\/(usercenter|userinfo)/ {
         set $cookie login=true;expires=20180808;
+        set $id 56789;
+
         proxy_pass http://127.0.0.1:3008/info/;
+
         set_cookie userID 200908204140;
-        set $id user_iddddd;
-        set_cookie $flight zdy_$id;
+        set_cookie userName user_$id;
     }
+
+    location ~ /\/local\/(.*)(\?(.*))?/ {
+        send_file ./mock/$1.json;
+    }
+
+    location /dev {
+        #alias /site/path/;
+        alias ./src/view/;
+        root app.html
+    }
+
+    location /multiple {
+        echo &lt;h1&gt;hello_echo&lt;/h1&gt;;
+        echo &lt;p&gt;test echo directive&lt;/p&gt;;
+        echo &lt;p&gt;finish&lt;/p&gt;;
+    }
+
 }
 </code></pre></div>
         </div>
