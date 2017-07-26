@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>CLI Options - hiproxy</title>
+        <title>CLI选项 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../introduction/">Introduction</a>
+    <a href="../introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../installation/">Installation</a>
+    <a href="../installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../run_example/">Run Examples</a>
+    <a href="../run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../play_with_your_projects/">Applied to existing projects</a>
+    <a href="../applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li class="active">
-    <a href="./">CLI Options</a>
+    <a href="./">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/introduction/">Configuration Introduction</a>
+    <a href="../../configuration/introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/find_conf/">Configuration file lookup</a>
+    <a href="../../configuration/find_conf/">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../../configuration/ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../../configuration/ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/rewrite_introduction/">Introduction</a>
+    <a href="../../configuration/rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_scope/">Scope</a>
+    <a href="../../configuration/rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_directive/">Directive</a>
+    <a href="../../configuration/rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../../configuration/rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -173,7 +173,7 @@
                     </a>
                 </li> -->
                     <!-- <li >
-                        <a rel="next" href="../play_with_your_projects/">
+                        <a rel="next" href="../applied_to_existing_projects/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
@@ -202,7 +202,7 @@
             <li><a href="#stop">stop</a></li>
             <li><a href="#open">open</a></li>
             <li><a href="#state">state</a></li>
-            <li><a href="#reload">reload</a></li>
+            <li><a href="#restart">restart</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -233,21 +233,21 @@
 
   Commands:
 
-    start   Start a local proxy server
-    stop    Stop the local proxy server
-    reload  Restart the local proxy server
-    state   Show all the servers state
-    open    Open browser and set proxy
+    start    Start a local proxy server
+    stop     Stop the local proxy server (Only works in daemon mode)
+    restart  Restart the local proxy service (Only works in daemon mode)
+    state    Show all the servers state (Only works in daemon mode)
+    open     Open browser and set proxy
+    hello    A test command that say hello to you.
 
   Options:
 
-    -v, --version     显示版本信息
-    -h, --help        显示帮助信息
-    -D, --daemon      后台运行
-    --log-dir &lt;dir&gt;   后台运行时日志存放路径（绝对路径），默认为用户目录
-    --log-time        显示日志时间
-    --log-level       过滤日志级别，只有指定级别的日志才会显示
-    --grep &lt;content&gt;  过滤日志内容，只有保护过滤字符串的日志才会显示
+    -v, --version     Display version information
+    -h, --help        Display help information
+    --log-dir &lt;dir&gt;   The log directory when run in background, default: user home directory
+    --log-time        Show time info before every log message
+    --log-level       The log levels, format: &lt;level1&gt;[,&lt;lavel2[,...]]
+    --grep &lt;content&gt;  Filter the log data
 </code></pre>
 
 <h2 id="start">start</h2>
@@ -266,11 +266,16 @@
   OPTIONS:
 
     -h, --help                    show help info
-    -s, --https                   启动https代理服务
-    -m, --middle-man-port &lt;port&gt;  https中间人端口号
-    -o, --open [browser]          打开浏览器窗口
-    --pac-proxy                   是否使用自动代理，如果使用，不在hosts或者rewrite规则中的域名不会走代理
-    -p, --port &lt;port&gt;             http代理服务端口号
+    -D, --daemon                  Run hiproxy in background
+    -c, --hosts-file &lt;files&gt;      hosts files, format: &lt;file1&gt;[,&lt;file2&gt;[,...]]
+    -s, --https                   Enable HTTPS proxy
+    -m, --middle-man-port &lt;port&gt;  The Man-In-The-MiddleHTTPS proxy port, default: 10010
+    -o, --open [browser]          Open a browser window and use hiproxy proxy
+    --pac-proxy                   Use Proxy auto-configuration (PAC)
+    -p, --port &lt;port&gt;             HTTP proxy port, default: 5525
+    -r, --rewrite-file &lt;files&gt;    rewrite config files, format: &lt;file1&gt;[,&lt;file2&gt;[,...]]
+    --sys-proxy &lt;path&gt;            Your own proxy server path, format: &lt;ip&gt;[:port], only works when use PAC
+    -w, --workspace &lt;dir&gt;         The workspace
 </code></pre>
 
 <h2 id="stop">stop</h2>
@@ -284,7 +289,7 @@
 
   USAGE:
 
-    open [option]
+    open [options]
 
   DESCRIBE:
 
@@ -293,13 +298,14 @@
   OPTIONS:
 
     -h, --help               show help info
-    -b, --browser &lt;browser&gt;  浏览器名称，默认：chrome，可选值：chrome,firefox,opera
-    --pac-proxy              是否使用自动代理，如果使用，不在hosts或者rewrite规则中的域名不会走代理
+    -b, --browser &lt;browser&gt;  Browser name, default: chrome. Valid alues: chrome,firefox,opera
+    --pac-proxy              Use Proxy auto-configuration (PAC)
 </code></pre>
 
 <h2 id="state">state</h2>
 <p>This command will display the basic status information of the currently started proxy service.</p>
-<h2 id="reload">reload</h2></div>
+<h2 id="restart">restart</h2>
+<p>This command will restart the proxy service.</p></div>
         </div>
 
         <footer class="col-md-12">

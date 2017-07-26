@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../get_started/introduction/">Introduction</a>
+    <a href="../../get_started/introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../../get_started/installation/">Installation</a>
+    <a href="../../get_started/installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../../get_started/run_example/">Run Examples</a>
+    <a href="../../get_started/run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/play_with_your_projects/">Applied to existing projects</a>
+    <a href="../../get_started/applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/cli_options/">CLI Options</a>
+    <a href="../../get_started/cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../introduction/">Configuration Introduction</a>
+    <a href="../introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../find_conf/">Configuration file lookup</a>
+    <a href="../find_conf/">配置文件查找</a>
 </li>
                             
 <li class="active">
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../rewrite_introduction/">Introduction</a>
+    <a href="../rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../rewrite_scope/">Scope</a>
+    <a href="../rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../rewrite_directive/">Directive</a>
+    <a href="../rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -197,7 +197,7 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#hosts">Hosts</a></li>
             <li><a href="#_1">简介</a></li>
-            <li><a href="#_2">工作机理</a></li>
+            <li><a href="#_2">工作机制</a></li>
             <li><a href="#_3">特性</a></li>
             <li><a href="#_4">语法</a></li>
             <li><a href="#_5">例子</a></li>
@@ -211,10 +211,10 @@
 <p>If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!</p>
 </blockquote>
 <h2 id="_1">简介</h2>
-<p><strong>hiproxy</strong> 同时支持项目<code>hosts</code>及<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite.md">rewrite</a>文件。<code>hosts</code>仅能支持简单的域名转发，如果需要复杂的域名转发，请参考<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite.md">rewrite</a>。</p>
 <p><strong>Hosts</strong> 可以看作一个增强版的系统<code>hosts</code>，其最大特性是可以<strong>支持端口转发</strong>。</p>
-<h2 id="_2">工作机理</h2>
-<p><strong>hiproxy</strong> 启动时，会读取并解析各项目根目录中的 <code>hosts</code> 文件，代理服务器接收到请求后，会根据<code>hosts</code> 文件做相应文请求的转发。 </p>
+<p><strong>注</strong>：hiproxy同时支持项目<code>hosts</code>及<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite.md">rewrite</a>文件。<code>hosts</code>仅支持简单的域名转发，如果需要设置高级域名转发规则，请参考<a href="https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite.md">rewrite</a>。</p>
+<h2 id="_2">工作机制</h2>
+<p><strong>hiproxy</strong> 启动时，会读取并解析各项目根目录中的<code>hosts</code>文件，代理服务器接收到请求后，会根据<code>hosts</code>文件做相应文请求的转发。</p>
 <h2 id="_3">特性</h2>
 <ul>
 <li>支持端口转发；</li>
@@ -229,13 +229,8 @@
 <h2 id="_5">例子</h2>
 <pre><code class="bash"># custom hosts with port :)
 
-# comment
-# 127.0.0.1 hiproxy.com
-# 127.0.0.1:8800 hiproxy.com
-# 127.0.0.1:8800 hiproxy.com hii.com
-
-127.0.0.1:8800 hiproxy.com hi.com
-127.0.0.1 example.com example.com.cn
+127.0.0.1:8800 hiproxy.org blog.hiproxy.org
+127.0.0.1 hiproxy.org blog.hiproxy.org
 </code></pre></div>
         </div>
 

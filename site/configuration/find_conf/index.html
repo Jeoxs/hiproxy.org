@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Configuration file lookup - hiproxy</title>
+        <title>配置文件查找 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../get_started/introduction/">Introduction</a>
+    <a href="../../get_started/introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../../get_started/installation/">Installation</a>
+    <a href="../../get_started/installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../../get_started/run_example/">Run Examples</a>
+    <a href="../../get_started/run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/play_with_your_projects/">Applied to existing projects</a>
+    <a href="../../get_started/applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/cli_options/">CLI Options</a>
+    <a href="../../get_started/cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../introduction/">Configuration Introduction</a>
+    <a href="../introduction/">简介</a>
 </li>
                             
 <li class="active">
-    <a href="./">Configuration file lookup</a>
+    <a href="./">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../rewrite_introduction/">Introduction</a>
+    <a href="../rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../rewrite_scope/">Scope</a>
+    <a href="../rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../rewrite_directive/">Directive</a>
+    <a href="../rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -196,6 +196,8 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#find-config-file">Find Config file</a></li>
+            <li><a href="#_1">指定配置文件</a></li>
+            <li><a href="#_2">配置文件名称通配符</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -205,12 +207,21 @@
 <p>如果你愿意帮助hiproxy编写文档，请联系zdying@live.com, 谢谢！</p>
 <p>If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!</p>
 </blockquote>
-<p>如果是遵循的理念的存放配置文件（包括配置文件的文件名），当hiproxy的启动时，能够自动查找到上面三个项目的配置文件，不需要手动指定配置文件。</p>
+<p>如果是遵循的理念的存放配置文件（包括配置文件的文件名），当hiproxy的启动时，能够自动查找项目的配置文件，不需要手动指定配置文件。</p>
 <p>如果没有遵循，把配置文件存放在其他路径或者不是使用默认的文件名称（hosts文件默认文件名称为<code>hosts</code>，rewrite文件默认的文件名称为<code>rewrite</code>），需要在启动的时候，手动指定配置文件名称。</p>
+<h2 id="_1">指定配置文件</h2>
 <p>要指定配置文件名称，可以使用选项<code>-c, --hosts-file &lt;files&gt;</code>和<code>-r, --rewrite-file &lt;files&gt;</code>。</p>
 <p><code>-c, --hosts-file &lt;files&gt;</code>用来指定hosts的文件路径，多个文件使用<code>,</code>分隔。</p>
 <p><code>-r, --rewrite-file &lt;files&gt;</code>用来指定rewrite的文件路径，多个文件使用<code>,</code>分隔。</p>
-<p><code>&lt;files&gt;</code>也支持使用<strong>简单的通配符模式</strong>来指定多个文件，比如<code>--rewrite-file ./*/*.conf</code>。支持的通配符有：</p>
+<p><code>&lt;files&gt;</code>也支持使用<strong>简单的通配符模式</strong>来指定多个文件，比如<code>--rewrite-file ./*/*.conf</code>。</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>如果指定了对应的配置文件，hiproxy会查找指定的文件，不再查找默认的<code>hosts</code>或者<code>rewrite</code>，比如：
+<em> 指定了<code>-c ./*/hosts.conf</code>，则不再查找名称为<code>hosts</code>的文件。
+</em> 指定了<code>-r ./*/rewrite.conf</code>，则不再查找名称为<code>rewrite</code>的文件。</p>
+</blockquote>
+<h2 id="_2">配置文件名称通配符</h2>
+<p>支持的通配符有：</p>
 <table>
 <thead>
 <tr>

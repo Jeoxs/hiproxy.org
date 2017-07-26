@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,31 @@
         
     <url>
      <loc>/get_started/introduction/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/get_started/installation/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/get_started/run_example/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/get_started/play_with_your_projects/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <loc>/get_started/applied_to_existing_projects/</loc>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/get_started/cli_options/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -47,31 +47,31 @@
         
     <url>
      <loc>/configuration/introduction/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/find_conf/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/hosts/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/rewrite/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/ssl_certificate/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,25 +81,25 @@
         
     <url>
      <loc>/configuration/rewrite_introduction/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/rewrite_scope/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/rewrite_directive/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/configuration/rewrite_built_in_variable/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -109,13 +109,13 @@
         
     <url>
      <loc>/api/api/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/events/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -125,25 +125,25 @@
         
     <url>
      <loc>/developer/plugin/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/developer/cli_command/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/developer/rewrite_directive/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <loc>/developer/directive/</loc>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/developer/route/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -153,7 +153,7 @@
         
     <url>
      <loc>/faqs/</loc>
-     <lastmod>2017-07-23</lastmod>
+     <lastmod>2017-07-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

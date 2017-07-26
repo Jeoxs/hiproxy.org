@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Introduction - hiproxy</title>
+        <title>hiproxy简介 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li class="active">
-    <a href="./">Introduction</a>
+    <a href="./">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../installation/">Installation</a>
+    <a href="../installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../run_example/">Run Examples</a>
+    <a href="../run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../play_with_your_projects/">Applied to existing projects</a>
+    <a href="../applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../cli_options/">CLI Options</a>
+    <a href="../cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/introduction/">Configuration Introduction</a>
+    <a href="../../configuration/introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/find_conf/">Configuration file lookup</a>
+    <a href="../../configuration/find_conf/">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../../configuration/ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../../configuration/ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/rewrite_introduction/">Introduction</a>
+    <a href="../../configuration/rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_scope/">Scope</a>
+    <a href="../../configuration/rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_directive/">Directive</a>
+    <a href="../../configuration/rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../../configuration/rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../developer/plugin/">Plugin</a>
+    <a href="../../developer/plugin/">插件机制</a>
 </li>
                             
 <li >
-    <a href="../../developer/cli_command/">Extend Command</a>
+    <a href="../../developer/cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../../developer/rewrite_directive/">Extend Directive</a>
+    <a href="../../developer/directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../../developer/route/">Extend Route</a>
+    <a href="../../developer/route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -241,7 +241,7 @@
 <h2 id="_2">理念</h2>
 <p>我们经过对很多现有开发模式的反思、总结现在遇到的一些问题，基于以下两个理念开发出了hiproxy：</p>
 <ul>
-<li><strong>工作空间</strong>：hiproxy工作在工作空间（workspace）中，工作空间中所有项目的配置文件都会被hiproxy解析。<em>工作空间可以通过<code>-w, --workspace &lt;workspace&gt;</code>来指定，也可以直接进入到工作空间启动代理服务</em>。</li>
+<li><strong>工作空间</strong>：hiproxy工作在工作空间（workspace）中，工作空间中所有项目的配置文件都会被hiproxy解析。<em>工作空间可以通过<code>-w, --workspace &lt;workspace&gt;</code>来指定，也可以直接进入到工作空间启动代理服务</em>。</li>
 <li><strong>配置文件共享</strong>：配置文件，提交到代码仓库，团队成员共享配置。之前hosts和Nginx配置一般都是不提交到代码仓库，团队成员各自本地维护，成本大并且效率比较低。</li>
 </ul>
 <h2 id="_3">基本原理</h2>

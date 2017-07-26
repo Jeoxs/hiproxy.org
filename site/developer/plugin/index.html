@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Plugin - hiproxy</title>
+        <title>插件机制 - hiproxy</title>
          <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet"> 
@@ -48,43 +48,43 @@
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                     <li >
-                        <a href="../..">Home</a>
+                        <a href="../..">首页</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Get Started <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">快速开始 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../get_started/introduction/">Introduction</a>
+    <a href="../../get_started/introduction/">hiproxy简介</a>
 </li>
                             
 <li >
-    <a href="../../get_started/installation/">Installation</a>
+    <a href="../../get_started/installation/">安装</a>
 </li>
                             
 <li >
-    <a href="../../get_started/run_example/">Run Examples</a>
+    <a href="../../get_started/run_example/">运行示例项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/play_with_your_projects/">Applied to existing projects</a>
+    <a href="../../get_started/applied_to_existing_projects/">运用到现有项目</a>
 </li>
                             
 <li >
-    <a href="../../get_started/cli_options/">CLI Options</a>
+    <a href="../../get_started/cli_options/">CLI选项</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">配置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/introduction/">Configuration Introduction</a>
+    <a href="../../configuration/introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/find_conf/">Configuration file lookup</a>
+    <a href="../../configuration/find_conf/">配置文件查找</a>
 </li>
                             
 <li >
@@ -96,7 +96,7 @@
 </li>
                             
 <li >
-    <a href="../../configuration/ssl_certificate/">SSL/TLS Certificate</a>
+    <a href="../../configuration/ssl_certificate/">SSL/TLS证书配置</a>
 </li>
                         </ul>
                     </li>
@@ -105,19 +105,19 @@
                         <ul class="dropdown-menu">
                             
 <li >
-    <a href="../../configuration/rewrite_introduction/">Introduction</a>
+    <a href="../../configuration/rewrite_introduction/">简介</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_scope/">Scope</a>
+    <a href="../../configuration/rewrite_scope/">作用域</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_directive/">Directive</a>
+    <a href="../../configuration/rewrite_directive/">内置指令</a>
 </li>
                             
 <li >
-    <a href="../../configuration/rewrite_built_in_variable/">Built-in Variables</a>
+    <a href="../../configuration/rewrite_built_in_variable/">内置变量</a>
 </li>
                         </ul>
                     </li>
@@ -130,33 +130,33 @@
 </li>
                             
 <li >
-    <a href="../../api/events/">Events</a>
+    <a href="../../api/events/">事件</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Developer <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">开发者 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li class="active">
-    <a href="./">Plugin</a>
+    <a href="./">插件机制</a>
 </li>
                             
 <li >
-    <a href="../cli_command/">Extend Command</a>
+    <a href="../cli_command/">扩展CLI命令</a>
 </li>
                             
 <li >
-    <a href="../rewrite_directive/">Extend Directive</a>
+    <a href="../directive/">扩展指令</a>
 </li>
                             
 <li >
-    <a href="../route/">Extend Route</a>
+    <a href="../route/">扩展页面</a>
 </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">FAQs <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">常见问题 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             
 <li >
@@ -198,7 +198,8 @@
         <li class="main active"><a href="#plugin">Plugin 插件开发指南</a></li>
             <li><a href="#_1">插件结构</a></li>
             <li><a href="#_2">代码示例</a></li>
-            <li><a href="#_3">温馨提示</a></li>
+            <li><a href="#_3">插件发布</a></li>
+            <li><a href="#_4">温馨提示</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -206,6 +207,7 @@
 <h1 id="plugin">Plugin 插件开发指南</h1>
 <p>hiproxy提供了一套插件开发机制，这个机制很简单：插件开发完成后，将插件安装到全局，hiproxy启动时会自动查找安装的所有插件。</p>
 <p>开发者开发新插件时，可以参考<code>hiproxy-plugin-example</code>: <a href="https://github.com/hiproxy/hiproxy-plugin-example">https://github.com/hiproxy/hiproxy-plugin-example</a>。这是一个完整的插件示例，你可以基于这个示例修改。</p>
+<p><strong>插件就是一个普通的npm模块，不需要将hiproxy作为依赖安装到插件中。</strong></p>
 <p><br /></p>
 <h2 id="_1">插件结构</h2>
 <p>hiproxy插件必须满足三个条件：</p>
@@ -229,7 +231,7 @@
 <p><strong>commands</strong>: <code>&lt;Array&gt;</code>，用来扩展<code>hiproxy</code>的<strong>CLI命令</strong>，数组中每个对象作为一个命令配置，具体配置见<a href="../cli_command/">命令配置</a>。</p>
 </li>
 <li>
-<p><strong>directives</strong>: <code>&lt;Array&gt;</code>，用来扩展<code>hiproxy</code>的<strong>rewrite指令</strong>，数组中每个对象作为一个指令配置，具体配置见<a href="../rewrite_directive/">指令配置</a>。</p>
+<p><strong>directives</strong>: <code>&lt;Array&gt;</code>，用来扩展<code>hiproxy</code>的<strong>rewrite指令</strong>，数组中每个对象作为一个指令配置，具体配置见<a href="../directive/">指令配置</a>。</p>
 </li>
 <li>
 <p><strong>routes</strong>: <code>&lt;Array&gt;</code>，用来扩展<code>hiproxy</code>的<strong>页面路由</strong>，数组中每个对象作为一个路由配置，具体配置见<a href="../route/">路由配置</a>。</p>
@@ -243,7 +245,10 @@
 </ul>
 <h2 id="_2">代码示例</h2>
 <p><a href="https://github.com/hiproxy/hiproxy-plugin-example/blob/master/index.js#L14-L23">https://github.com/hiproxy/hiproxy-plugin-example/blob/master/index.js#L14-L23</a></p>
-<h2 id="_3">温馨提示</h2>
+<h2 id="_3">插件发布</h2>
+<p>插件开发、测试完成之后，可以将其发布到npm。</p>
+<p>发布的过程和方法，跟其他npm模块的发布一样，因为hiproxy的插件，<strong>就是一个</strong>遵循了特定规则的<strong>普通npm模块</strong>。</p>
+<h2 id="_4">温馨提示</h2>
 <p>由于hiproxy只会从<code>npm root -g</code>所在的目录去查找名称以<code>hiproxy-plugin-</code>开头的插件，所以在本地开发时，hiproxy加载不到新的插件。</p>
 <p>可以使用<code>npm link</code>，创建一个符号链接，这样就能一边开发一边调试开发中的插件。详情请参考npm文档：<a href="https://docs.npmjs.com/cli/link">npm link</a>。</p></div>
         </div>

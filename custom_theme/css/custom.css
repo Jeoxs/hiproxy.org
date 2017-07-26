@@ -112,3 +112,14 @@ pre,code {
     color: #8DD6F9;
     font-weight: 700;
 }
+
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    border: none;
+    margin-right: 5px;
+}
+
+.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+}
