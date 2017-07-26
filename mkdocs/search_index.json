@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "hiproxy documentation\n\n\nGet Started\n\n\n\n\nhiproxy\u4ecb\u7ecd\n\n\n\u5b89\u88c5hiproxy\n\n\n\u8fd0\u884c\u793a\u4f8b\u9879\u76ee\n\n\n\u8fd0\u7528\u5230\u73b0\u6709\u9879\u76ee\u4e2d\n\n\n\u547d\u4ee4\u884c\u547d\u4ee4\u548c\u53c2\u6570\n\n\n\n\nConfiguration\n\n\n\n\nhiproxy\u914d\u7f6e\u7b80\u4ecb\n\n\n\u914d\u7f6e\u6587\u4ef6\u67e5\u627e\n\n\nhosts\n\n\nrewrite\n\n\n\u83b7\u53d6\uff0f\u5bfc\u5165SSL\u8bc1\u4e66\n\n\n\n\nRewrite\n\n\n\n\n\u4ecb\u7ecd\n\n\n\u4f5c\u7528\u57df\n\n\n\u6307\u4ee4\n\n\n\u5185\u7f6e\u53d8\u91cf\n\n\n\n\nNode.js API\n\n\n\n\nAPI\n\n\nEvents\n\n\n\n\nDeveloper\n\n\n\n\nhiproxy\u63d2\u4ef6\u673a\u5236\n\n\n\u6269\u5c55CLI\u547d\u4ee4\n\n\n\u6269\u5c55rewrite\u6307\u4ee4\n\n\n\u6269\u5c55\u9875\u9762\u8def\u7531\n\n\n\n\nFAQs\n\n\n\n\nFAQs", 
+            "text": "hiproxy documentation\n\n\nGet Started\n\n\n\n\nhiproxy\u4ecb\u7ecd\n\n\n\u5b89\u88c5hiproxy\n\n\n\u8fd0\u884c\u793a\u4f8b\u9879\u76ee\n\n\n\u8fd0\u7528\u5230\u73b0\u6709\u9879\u76ee\u4e2d\n\n\n\u547d\u4ee4\u884c\u547d\u4ee4\u548c\u53c2\u6570\n\n\n\n\nConfiguration\n\n\n\n\nhiproxy\u914d\u7f6e\u7b80\u4ecb\n\n\n\u914d\u7f6e\u6587\u4ef6\u67e5\u627e\n\n\nhosts\n\n\nrewrite\n\n\n\u4ecb\u7ecd\n\n\n\u4f5c\u7528\u57df\n\n\n\u6307\u4ee4\n\n\n\u5185\u7f6e\u53d8\u91cf\n\n\n\u83b7\u53d6\uff0f\u5bfc\u5165SSL\u8bc1\u4e66\n\n\n\n\nNode.js API\n\n\n\n\nAPI\n\n\nEvents\n\n\n\n\nDeveloper\n\n\n\n\nhiproxy\u63d2\u4ef6\u673a\u5236\n\n\n\u6269\u5c55CLI\u547d\u4ee4\n\n\n\u6269\u5c55rewrite\u6307\u4ee4\n\n\n\u6269\u5c55\u9875\u9762\u8def\u7531\n\n\n\n\nFAQs\n\n\n\n\nFAQs", 
             "title": "\u9996\u9875"
         }, 
         {
@@ -17,13 +17,8 @@
         }, 
         {
             "location": "/#configuration", 
-            "text": "hiproxy\u914d\u7f6e\u7b80\u4ecb  \u914d\u7f6e\u6587\u4ef6\u67e5\u627e  hosts  rewrite  \u83b7\u53d6\uff0f\u5bfc\u5165SSL\u8bc1\u4e66", 
+            "text": "hiproxy\u914d\u7f6e\u7b80\u4ecb  \u914d\u7f6e\u6587\u4ef6\u67e5\u627e  hosts  rewrite  \u4ecb\u7ecd  \u4f5c\u7528\u57df  \u6307\u4ee4  \u5185\u7f6e\u53d8\u91cf  \u83b7\u53d6\uff0f\u5bfc\u5165SSL\u8bc1\u4e66", 
             "title": "Configuration"
-        }, 
-        {
-            "location": "/#rewrite", 
-            "text": "\u4ecb\u7ecd  \u4f5c\u7528\u57df  \u6307\u4ee4  \u5185\u7f6e\u53d8\u91cf", 
-            "title": "Rewrite"
         }, 
         {
             "location": "/#nodejs-api", 
