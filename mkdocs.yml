@@ -1,7 +1,7 @@
 site_name: hiproxy
 theme: null
 theme_dir: 'custom_theme'
-
+google_analytics: ['UA-103231920-1', 'auto']
 repo_url: 'https://github.com/hiproxy/hiproxy'
 
 pages:

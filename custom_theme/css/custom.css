@@ -123,3 +123,7 @@ pre,code {
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
     background-color: transparent;
 }
+
+hr {
+    border-width: 1
+}
