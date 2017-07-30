@@ -3,11 +3,11 @@
 >
 > If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!
 
-* [介绍](https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite_introduction.md)
+* [介绍](./rewrite_introduction.md)
 
-* [作用域](https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite_scope.md)
+* [作用域](./rewrite_scope.md)
 
-* [指令](https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite_directive.md)
+* [指令](./rewrite_directive.md)
 
-* [内置变量](https://github.com/hiproxy/hiproxy/blob/master/docs/configuration/rewrite_build_in_variable.md)
+* [内置变量](./rewrite_build_in_variable.md)
 

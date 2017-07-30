@@ -136,7 +136,9 @@ domain hiproxy.org {
   location /blog/ {
     proxy_pass http://127.0.0.1:8000/;
   }
+}
 
+domain hiproxy.org {
   location /docs/ {
     proxy_pass http://127.0.0.1:9000/;
   }
