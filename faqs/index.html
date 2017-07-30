@@ -254,7 +254,6 @@ hiproxy.org =&gt; {
 <h3 id="hiproxy_1">hiproxy多个项目中的不同配置文件使用相同的域名吗？</h3>
 <p>支持。</p>
 <p>可以在不同的项目的不同配置文件中，给相同的域名配置代理规则。hiproxy会自动合并相同域名的规则，如果路由配置有冲突，后加载的配置文件的规则会覆盖前面的规则。</p>
-<p>详细的配置规则处理文档正在编写。</p>
 <p><br/></p>
 <h3 id="hiproxy_2">hiproxy怎么处理多个配置文件中的规则冲突？</h3>
 <p>详细的配置规则处理文档正在编写。</p>
@@ -264,7 +263,7 @@ hiproxy.org =&gt; {
 <p><br/></p>
 <h3 id="hiproxyssl">hiproxy中如何使用自己的SSL证书？</h3>
 <p>默认情况下，在代理https请求的时候，hiproxy会<strong>自动生成证书</strong>，并使用hiproxy自定义的CA证书签名。用户只需要导入hiproxy的根证书。</p>
-<p>如果用户需要使用自定义的证书，可以使用hiproxy提供的指令来配置：</p>
+<p>如果用户需要使用自定义的证书，可以·使用hiproxy提供的指令来配置：</p>
 <pre><code>ssl_certificate     ./hiproxy.org.crt;
 ssl_certificate_key ./hiproxy.org.key;
 </code></pre>
