@@ -1,4 +1,4 @@
-site_name: hiproxy
+site_name: hiproxy documentation
 site_author: zdying
 site_description: hiproxy documentation. hiproxy is a lightweight proxy tool based on Node.js that supports an NGINX-like configuration.
 theme: null
