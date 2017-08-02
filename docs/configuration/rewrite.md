@@ -9,5 +9,5 @@
 
 * [指令](./rewrite_directive.md)
 
-* [内置变量](./rewrite_build_in_variable.md)
+* [内置变量](./rewrite_built_in_variable.md)
 
