@@ -97,7 +97,7 @@ hiproxy代理服务器
 
 <a name="ProxyServer+findConfigFiels"></a>
 
-### proxyServer.findConfigFiels([dir]) ⇒ [<code>ProxyServer</code>](#ProxyServer)
+### proxyServer.findConfigFiles([dir]) ⇒ [<code>ProxyServer</code>](#ProxyServer)
 在指定工作空间（目录）下查找配置文件
 hiproxy会在指定的空间下所有一级目录下查找配置文件
 
@@ -107,3 +107,26 @@ hiproxy会在指定的空间下所有一级目录下查找配置文件
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | [dir] | <code>String</code> | <code>process.cwd()</code> | 工作空间（目录） |
+
+
+### proxyServer.enableConfFile(confFileType, filePath) ⇒ [<code>ProxyServer</code>](#ProxyServer)
+启用指定配置文件
+
+**Kind**: instance method of [<code>ProxyServer</code>](#ProxyServer)  
+**Access**: public  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| confFileType | <code>String</code> |  | 文件类型(host/rewrite) |
+| filePath | <code>String</code> \| <code>Array</code> |  | 修改的文件路径 |
+
+### proxyServer.disableConfFile(confFileType, filePath) ⇒ [<code>ProxyServer</code>](#ProxyServer)
+禁用指定配置文件
+
+**Kind**: instance method of [<code>ProxyServer</code>](#ProxyServer)  
+**Access**: public  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| confFileType | <code>String</code> |  | 文件类型(host/rewrite) |
+| filePath | <code>String</code> \| <code>Array</code> |  | 修改的文件路径 |
