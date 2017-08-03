@@ -365,7 +365,7 @@
 </tbody>
 </table>
 <p><a name="ProxyServer+findConfigFiels"></a></p>
-<h3 id="proxyserverfindconfigfielsdir-proxyserver">proxyServer.findConfigFiels([dir]) ⇒ <a href="#ProxyServer"><code>ProxyServer</code></a></h3>
+<h3 id="proxyserverfindconfigfilesdir-proxyserver">proxyServer.findConfigFiles([dir]) ⇒ <a href="#ProxyServer"><code>ProxyServer</code></a></h3>
 <p>在指定工作空间（目录）下查找配置文件
 hiproxy会在指定的空间下所有一级目录下查找配置文件</p>
 <p><strong>Kind</strong>: instance method of <a href="#ProxyServer"><code>ProxyServer</code></a><br />
@@ -385,6 +385,62 @@ hiproxy会在指定的空间下所有一级目录下查找配置文件</p>
 <td><code>String</code></td>
 <td><code>process.cwd()</code></td>
 <td>工作空间（目录）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proxyserverenableconffileconffiletype-filepath-proxyserver">proxyServer.enableConfFile(confFileType, filePath) ⇒ <a href="#ProxyServer"><code>ProxyServer</code></a></h3>
+<p>启用指定配置文件</p>
+<p><strong>Kind</strong>: instance method of <a href="#ProxyServer"><code>ProxyServer</code></a><br />
+<strong>Access</strong>: public  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>confFileType</td>
+<td><code>String</code></td>
+<td></td>
+<td>文件类型(host/rewrite)</td>
+</tr>
+<tr>
+<td>filePath</td>
+<td><code>String</code> | <code>Array</code></td>
+<td></td>
+<td>修改的文件路径</td>
+</tr>
+</tbody>
+</table>
+<h3 id="proxyserverdisableconffileconffiletype-filepath-proxyserver">proxyServer.disableConfFile(confFileType, filePath) ⇒ <a href="#ProxyServer"><code>ProxyServer</code></a></h3>
+<p>禁用指定配置文件</p>
+<p><strong>Kind</strong>: instance method of <a href="#ProxyServer"><code>ProxyServer</code></a><br />
+<strong>Access</strong>: public  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>confFileType</td>
+<td><code>String</code></td>
+<td></td>
+<td>文件类型(host/rewrite)</td>
+</tr>
+<tr>
+<td>filePath</td>
+<td><code>String</code> | <code>Array</code></td>
+<td></td>
+<td>修改的文件路径</td>
 </tr>
 </tbody>
 </table></div>
