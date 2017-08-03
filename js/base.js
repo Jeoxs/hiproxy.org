@@ -52,6 +52,17 @@ $('body').scrollspy({
 
 /* Toggle the `clicky` class on the body when clicking links to let us
    retrigger CSS animations. See ../css/base.css for more details. */
+   $("[id^=lang]").click(function(e) {
+        switch($(this)[0].id){
+            case 'lang-zh':
+                translate('zh');
+                break;
+            case 'lang-en':
+                translate('en');
+                break;
+
+        }
+   });
 $('a').click(function(e) {
     $('body').toggleClass('clicky');
 });
@@ -60,3 +71,26 @@ $('a').click(function(e) {
 $("li.disabled a").click(function() {
     event.preventDefault();
 });
+
+
+var langs = ['zh', 'en'];
+var current_lang_index = 0;
+var current_lang = langs[current_lang_index];
+
+window.change_lang = function() {
+    current_lang_index = ++current_lang_index % 3;
+    current_lang = langs[current_lang_index];
+    translate();
+}
+
+function translate(language = '') {
+    if(language == ''){
+        language = 'zh'
+    }
+    $("[data-translate]").each(function(){
+        var key = $(this).data('translate');
+        $(this).html(dictionary[key][language] || "N/A");
+    });
+}
+
+translate();
