@@ -1,93 +1,91 @@
-# Applied to existing projects 运用到现有项目中
+# Applied to existing projects
 
-> 如果你愿意帮助hiproxy编写文档，请联系zdying@live.com, 谢谢！
->
 > If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!
 
-## 全局安装hiproxy
+## Global install hiproxy
 
-如果你还没有安装[hiproxy](https://github.com/hiproxy/hiproxy)，请查看[如何安装](installation.md)hiproxy。
+If you haven't installed [hiproxy](https://github.com/hiproxy/hiproxy)，check [Installation](installation.md).
 
-我们只需要把hiproxy安装到全局就可以了，**不需要将hiproxy作为一个依赖安装到每个项目中**。
+All you have to do is to global install `hiproxy`, **Local install is NOT necessary**
 
-## 添加配置文件
+## Add configuration files
 
-hiproxy的两个理念：
+Two rules of 'hiproxy':
 
-* 所有的项目都放到一个工作空间（workspace）下面；
-* 将配置文件（hosts／rewrite配置）放到对应的项目中，提交带代码仓库里面进行版本控制，与团队中其他成员共享。
+* All projects in one Workspace;
+* Put configuration files (hosts / rewrite) into specific project directory, submit them to the repository for version control and teamwork.
 
-所以，我们需要把配置文件存放到对应的项目中。针对不同的项目，可以添加不同的配置文件。hiproxy在启动的时候，会自动从工作目录下面查找配置文件。
+Therefore, all configuration files should be located in specific project directory. In terms of different projects, diverse configuration files can be added. While the 'hiproxy' on starting, those files will be found from workspace.
 
-推荐的工作空间目录结构如下：
+Recommended directory structure is as follows:
 
 ```
 workspace
-  ├── app-1 # 项目1
-  │   ├── hosts   # hosts文件
-  │   ├── rewrite # rewrite文件
-  │   └── src     # 项目代码
-  │   └── ...     # 其他文件
+  ├── app-1 # Proj.1
+  │   ├── hosts   # hosts file
+  │   ├── rewrite # rewrite file
+  │   └── src     # Source code
+  │   └── ...     # other files
   │
-  ├── app-2 # 项目2
-  │   ├── hosts   # hosts文件
-  │   ├── rewrite # rewrite文件
-  │   └── src     # 项目代码
-  │   └── ...     # 其他文件
+  ├── app-2 # Proj.2
+  │   ├── hosts   # hosts file
+  │   ├── rewrite # rewrite file
+  │   └── src     # Source code
+  │   └── ...     # other files
   │
-  └── app-3 # 项目3
-      ├── hosts   # hosts文件
-      ├── rewrite # rewrite文件
-      └── src     # 项目代码
-      └── ...     # 其他文件
+  └── app-3 # Proj.3
+  │   ├── hosts   # hosts file
+  │   ├── rewrite # rewrite file
+  │   └── src     # Source code
+  │   └── ...     # other files
 ```
 
-当然，如果你实在是不希望这样去做，想把所有的配置都放到项目之外，你也可以通过启动时添加选项（option）来制定配置文件路径：
+Of course, to put all configuration files outside of the project directory, just specify the file's path via the start options:
 
 ```
 -c, --hosts-file <files>   hosts files, format: <file1>[,<file2>[,...]]
 -r, --rewrite-file <files> rewrite config files, format: <file1>[,<file2>[,...]]
 ```
 
-> **提示**：
+> **TIPS**：
 >
-> * `-c, --hosts-file`和`-r, --rewrite-file`支持**简化版的模式匹配**；比如：`./*/*.conf`；
-> * 支持的语法：`*`, `?`, `[abc]`, `[a-z]`, `[^a-z]`, `[!a-z]`；
-> * 不支持的语法：`**`。
+> * `-c, --hosts-file` and `-r, --rewrite-file` support **Simplified pattern matching**; e.g. `./*/*.conf`;
+> * Supported syntax：`*`, `?`, `[abc]`, `[a-z]`, `[^a-z]`, `[!a-z]`;
+> * Unsupported syntax：`**`.
 
 ### hosts
 
-[hosts](../configuration/hosts.md)跟系统hosts类似，只不过这个hosts是放到项目中的，如果我们在项目根目录下面创建了hosts文件并且文件名称为`hosts`，hiproxy能自动发现并解析它。
+[hosts](../configuration/hosts.md) is similar to hosts, except it's located in the project directory, hiproxy will automatically find and resolve the hosts file named 'hosts' from the root directory of the project.
 
-如果文件名称不是`hosts`，则需要我们通过`-c, --hosts-file`来指定。
+If the file name isn't `hosts`, just specify it via option `-c, --hosts-file`
 
 ### rewrite
 
-[rewrite](../configuration/rewrite.md)跟hosts一样，也是放到项目中的，如果我们在项目根目录下面创建了名称为`rewrite`的文件，hiproxy也能自动发现并解析它。
+[rewrite](../configuration/rewrite.md) is similar to `hosts`, it's also located in the project directory, hiproxy will automatically find and resolve the file named 'rewrite' from the root directory of the project.
 
-如果文件名称不是`rewrite`，则需要我们通过`-r, --rewrite-file`来指定。
+If the file name isn't `rewrite`, just specify it via option `-r, --rewrite-file`
 
-## 提交git
+## Git commit
 
-hiproxy希望大家能把上面添加的hosts/rewrite配置文件提交到git中，这样团队中的成员更新代码之后，就能使用这些配置，免去了互相拷贝配置文件的苦恼。
+Git commitment is highly recommended, submit configuration files (hosts/rewrite) to the repository for version control and teamwork.
 
-## 启动服务
+## Start service
 
-hiproxy的理念是基于**工作空间**。我们需要在工作空间下启动hiproxy代理服务。假设我们所有的项目都存放在`~/workspace/`，那么这么目录就是我们的工作空间。
+The concept of hiproxy is based on **Workspace**. The proxy service of hiproxy should be started in the workspace. Assuming that all projects are located in `~/workspace/`, then this directory is the `Workspace`.
 
-当我们进入到这个目录，然后启动hiproxy代理服务，那么hiproxy将查找这个目录下面所有项目的配置文件。
+Enter this directory, start the proxy service, then hiproxy will find all the configuration files of all projects.
 
-如果你不希望进入工作空间再启动代理服务，也可以在任意目录启动hiproxy并使用选项`-w, --workspace <workspace>`，比如：
+If service is needed before entering the workspace, just start proxy using the option `-w, --workspace <workspace>` in any directories.
 
 ```bash
-# 进入到任意目录
+# Enter any directories
 hiproxy start -w ~/workspace/
 ```
 
-**提示**：在启动hiproxy代理服务的时候，建议使用`-o, --open [browser-name]`来打开一个浏览器窗口并自动配置好代理。这样就不需要我们自己手动去配置代理。
+**TIPS**: While on starting the proxy, use the option `-o, --open [browser-name]` to open a new browser window and configure the proxy automatically. Therefore, no manual configuring is needed.
 
-## 开发调试
+## Development debugging
 
-启动hiproxy代理服务之后，打开的浏览器窗口里面的所有请求，如果配置了代理规则，都会交给hirpoxy去处理。
+When the proxy is started, if the proxy rules are configured, all requests from the browser window will be handled by hiproxy.
 
-不需要配置系统hosts。
+No need to configure system hosts.

@@ -1,117 +1,114 @@
 # Introduction
 
-> 如果你愿意帮助hiproxy编写文档，请联系zdying@live.com, 谢谢！
->
 > If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!
 
-hiproxy是一个基于Node.js开发的轻量、可扩展的网络代理工具，主要目的是为了解决多个开发者在开发过程中遇到的hosts管理和请求代理的问题。使得在开发时，不再需要修改系统hosts和启动一个Nginx服务。
+hiproxy is a lightweight, extendable network proxy based on Node.js, the main purpose is to resolve the hosts management and proxy request problem that multiple developers encountered in development. And there is no need to modify system hosts and start Nginx service.
 
-hiproxy支持hosts配置文件，同时也扩展了hosts的语法，支持端口号。此外，hiproxy还支跟Nginx配置文件相似语法的配置文件。
+hiproxy supports hosts file, and the syntax is extended for hosts, it now supports port number. Besides, hiproxy supports configuration file using syntax similar to that for Nginx.
 
-## 为什么要开发hiproxy
+## Why hiproxy
 
-在前端开发中，如果我们通常会遇到下面的一些问题：
+In front-end development, if developers usually encounter some of the following problems:
 
-1. 调试线上页面问题，要在本地进行开发，需要能运行后端的项目（Node.js或者Java等项目），__前端工程师在本地搭建一套后端环境，可能代价比较大__。
-2. 如果有多个前端工程，__采用一个域名__，__部分工程__ 需要请求 __线上__ 资源，__部分__ 工程请求 __本地__。
-3. 为解决跨域等问题，本地开发时需要 __修改Response Header__。
-4. 本地开发https站点时，__证书不受信任__。
-5. 系统 __hosts修改__ 后，__不会立即生效__。
+1. While debugging online page issues, if both local development and back-end running ability for projects (Node.js/Java project) are required, __it may costs a lot for a front-end developer to build a back-end environment locally__.
+2. If multiple front-end projects exist, __with one domain__, __some projects__ need to request __online__ resources, __other__ projects request __local__ resources.
+3. In order to resolve the cross-domain problems, local development needs to __modify Response Header__.
+4. While developing https site locally, __certificate is not trusted__.
+5. With system __hosts__ changed，__it won't take effect immediately__.
 
-我们可以使用Nginx来解决上面的问题。Nginx很优秀，也是我们前端开发工程师的一个非常好的朋友。Nginx的配置文件风格，非常直观，编写配置效率很高。
+We can use Nginx to resolve the problems above. Nginx is excellent and also a very good friend of our front-end developer. The configuration file style of Nginx is very intuitive, and the configuration efficiency is high.
 
-但是，使用Nginx的时候，我们同时需要使用hosts，把相关请求发送到本地的Nginx服务。
+However, when using Nginx, we also need to use hosts to send the related requests to the local Nginx service.
 
-此外，大部分情况下，Nginx的配置文件并不会被提交到代码仓库，所以团队中其他开发者之间会互相拷贝配置文件，这样效率比较低，而且一个人修改了配置文件，其他人的配置不会随之更新。对于多个域名的配置，也都是放到一个统一的目录，然后在主配置里面include，这样也不太方便。
+In addition, in most cases, the Nginx configuration file will not be submitted to the repository, so other members of the team will copy each others' configuration file, therefore the efficiency is relatively low, and once a configuration file has been modified, other configuration files will not be updated in time. For the configuration of multiple domains, they are placed in a unified directory, and then being included in the main configuration, which is also inconvenient.
 
-__hosts__、__反向代理__、__https__ 和 __缓存__ 这些琐碎的事情，能不能统一解决？
+__hosts__, __revers proxy__, __https__ and __cache__ Will these trivial things be solved in a unified way?
 
-于是有了hiproxy。
+So there is hiproxy.
 
-## 特色
+## Feature
 
-* 支持Nginx风格的配置文件格式，配置简单直观
-* 支持hosts以及扩展（支持端口号）
-* 支持插件扩展rewrite指令、CLI命令和页面
-* 支持HTTPS证书自动生成
-* 支持代理自动配置（Proxy auto-config）
-* 支持后台启动，日志输出到文件
-* 支持配置文件自动查找
-* 支持打开浏览器窗口并自动配置代理
-* 提供Node.js API
+* Nginx-styled configuration file format supported, configuration is simple and intuitive
+* Hosts and extensions supported, as well as port number
+* Plugins extending `rewrite` commands, CLI commands and page supported
+* HTTPS certificate auto-generate
+* Proxy auto-config
+* Background start and log file output
+* Configuration file auto-find
+* Browser window auto-open and proxy auto-config
+* Node.js API provided
 * ...
 
-## 理念
+## Concept
 
-我们经过对很多现有开发模式的反思、总结现在遇到的一些问题，基于以下两个理念开发出了hiproxy：
+After rethought many of the existing development models and summed up some of the encountered problems, hiproxy is developed based on the following two concepts:
 
-* **工作空间**：hiproxy工作在工作空间（workspace）中，工作空间中所有项目的配置文件都会被hiproxy解析。*工作空间可以通过`-w, --workspace <workspace>`来指定，也可以直接进入到工作空间启动代理服务*。
-* **配置文件共享**：配置文件，提交到代码仓库，团队成员共享配置。之前hosts和Nginx配置一般都是不提交到代码仓库，团队成员各自本地维护，成本大并且效率比较低。
+* **Workspace**：hiproxy works in Workspace, the configuration files for all projects in the workspace are resolved by hiproxy. *The workspace can be specified via option `-w, --workspace <workspace>`, or directly into the workspace to start the proxy service*.
+* **Shared configuration file**: Configuration files are submitted to the repository, and team members share them. Previously, hosts and Nginx configurations were generally not submitted to the repository, and the team members were locally maintained, costly and inefficient.
 
-## 基本原理
+## Basic principle
 
-hiproxy的核心功能是请求代理，在代理请求的同时，处理了一些开发中的细节问题，比如https证书自动生成、自动配置浏览器代理等。
+The core functionality of hiproxy is the proxy request, it handles some of the development details at the same time as the proxy request, such as automatic generation of HTTPS certificates, automatic configuration of browser agents, and so on.
 
-下面讲介绍hiproxy核心功能的基本原理。
+The basic principles of hiproxy core functionality describe as follows.
 
-### 请求代理
+### Proxy request
 
-hiproxy充分利用了[中间人攻击](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)模式，作为中间人在客户端和服务器端转发数据，来实现HTTP以及HTTPS请求的代理。
+hiproxy makes full use of the [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) model as intermediaries, data is forwarded at the client and server side to implement the HTTP and proxy for the HTTPS requests.
 
-#### HTTP请求代理
+#### HTTP request
 
-对于**HTTP请求**，如果浏览器配置了代理，浏览器会发送`GET`/`POST`等请求给hiproxy代理。hiproxy收到请求之后，根据用户的`hosts`和`rewrite`规则配置，对请求的信息做一定的修改，然后去相应的服务器请求资源并返回给客户端。
+For the **HTTP request**, if the browser has configured the proxy, it will send `GET`/`POST` and so on to the hiproxy agent. After the hiproxy receives the request, it makes some changes to the requested information based on the user's `hosts` and `rewrite` rules, and then goes to the appropriate server to request the resource and return it to the client.
 
-#### HTTPS请求代理
+#### HTTPS request
 
-对于**HTTPS请求**，配置代理之后，浏览器会发送`CONNECT`请求到hiproxy服务，hiproxy会新建一个到最终目标服务器的TCP连接（也就是新建了一个隧道）然后在客户端和服务端之间转发数据。
+For the **HTTPS request**, the browser will send a `CONNECT` request to hiproxy service after the proxy configured, then hiproxy will start a new TCP connection to the final target server (i.e. a new tunnel) and then transmit the data between the client and server.
 
-但是这只是能简单代理请求，hiproxy没办法获取到请求的信息，比如参数和Cookie，更没有办法修改响应的数据。如果不需要对请求、响应的信息做对应的修改，这就能满足我们的需求。
+However, it's only a simple proxy request, and hiproxy cannot obtain the requested information, such as parameters and Cookie, and there is no way to modify the response data. If we do not need to make corresponding changes to the request and response information, this will meet our needs.
 
-如果我们需要实现跟HTTP请求一样的功能：根据请求的信息，对请求和响应做一些修改，需要怎么做呢？
+What needs to be done if we need to implement the same functionality as the HTTP request: do some changes to the request and response based on the requested information?
 
-好在我们可以充分利用[中间人攻击](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)这种模式。因为最终的目标服务器能获取到请求的信息，我们可以在hiproxy和最终服务器之间再启动一个中间人服务（这里简称为*M*），当hiproxy收到`CONNECT`请求之后，新建一个到*M*的连接，当*M*收到请求之后，跟HTTP请求代理一样，对请求信息做一些修改，然后去目标服务器请求资源并返回给客户端。
+Fortunately, we can make full use of [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) model. Because the final target server can get the requested information, we can start an intermediary service between the hiproxy and the final server (here referred to as *M*), when hiproxy receives a `CONNECT` request, it starts a new connection to the *M*, when the *M* receives the request, it makes some modifications to the request information, like the HTTP request agent, and then requests the resource from the target server and returns it to the client.
 
-### HTTPS证书生成
+### HTTPS certificate generation
 
-在SSL/TLS握手过程中，客户端发送的第一个消息（Client Hello）中，会使用[SNI(Server Name Indication
-)](https://en.wikipedia.org/wiki/Server_Name_Indication)扩展，将请求的域名发送给服务器。虽然只发送了域名信息，并没有发送其他的请求路径、参数和cookie等信息，但是对于生成证书来说，有域名已经足够。
+In the SSL/TLS handshake, the first message sent by the client (Client Hello) will be using the extension [SNI(Server Name Indication)](https://en.wikipedia.org/wiki/Server_Name_Indication) to send the requested domain to the server. Although only the domain information is sent, other requests, paths, parameters, and cookie are not sent, but the domain is sufficient for the certificate to be generated.
 
-当hiproxy获取到请求的域名时：
+When hiproxy gets the domain for the request:
 
-* 如果用户给对应的域名配置了证书，将用户配置的证书发送给客户端。
-* 否则，生成新的域名证书返回给客户端。
+* If the user has configured the certificate for the corresponding domain, the user configured certificate is sent to the client.
+* Otherwise, a new domain certificate is generated and returned to the client.
 
-### 浏览器窗口
+### Browser window
 
-首先，找到系统中浏览器对应的路径。比如在OSX上，查找`<browser-name>.app`，然后启动这个app，并传入参数来配置代理服务器地址。
+First, find the path corresponding to the browser in the system. For example, on OSX, look for `<browser-name>.app`, then start the app and pass arguments to configure the proxy server address.
 
 ```bash
 <path-to-chrome-app>.app [options] [url]
 ```
-
-在windows上，会去注册表中查找对应浏览器的`exe`文件路径。然后运行并传递参数。
+On Windows, you go to the registry to find the `exe` file path for the browser. Then run and pass arguments.
 
 ```bash
 <path-to-chrome-app>.exe [options] [url]
 ```
 
-对于Chrome/Opera浏览器来说，我们需要传递两个方面的参数：
+For Chrome/Opera, we need to pass two arguments:
 
-* **代理服务的地址**：`--proxy-pac-url`（PAC代理文件路径）和`--proxy-server`（普通代理地址）二选一，这两种代理hiproxy都支持。
+* **Address of proxy service**: `--proxy-pac-url` (PAC proxy file path) or `--proxy-server` (general agent address), hiproxy supports all.
 
-* **用户数据存放的目录**：`--user-data-dir`当传递这个参数，并且这个目录不是浏览器默认存放用户数据的目录，则会新建一个新的浏览器实例，这个示例独立于其他的浏览器窗口，互不影响（这个实例配置了代理，其他浏览器实例的请求不会通过这里配置的代理）。
+* **The directory where user data is stored**: `--user-data-dir`
 
+When passing this argument, and the directory is not the default directory the browser uses to store user data, it will create a new browser instance which is independent of any other browser window and has no effect on each other(the instance has been configured with proxy, the request of other browser instance will not pass through the proxy configuration here).
 
-### 配置文件
+### Configuration file
 
-hiproxy可以使用hosts来做简单的请求代理，对于复杂的配置使用跟Nginx语法类似的rewrite规则配置。
+hiproxy can use hosts as a simple proxy request and configure rewrite rules similar to the Nginx syntax for complex configurations.
 
 #### hosts
 
-跟系统`hosts`语法一致，此外也支持端口号。hosts只能配置域名对应的ip和端口号，不支持详细的路由配置以及对请求响应做修改。更多详细信息请查看[hosts](../configuration/hosts.md)。
+Consistent with the system `hosts` syntax, in addition, port numbers are supported. Hosts can only configure the IP and port numbers corresponding to the domain, detailed routing configuration and request response modification are not supported. For more details, check [hosts](../configuration/hosts.md)。
 
-#### hosts配置示例
+#### hosts configuration sample
 
 ```bash
 # comment
@@ -123,17 +120,17 @@ hiproxy可以使用hosts来做简单的请求代理，对于复杂的配置使�
 
 #### rewrite
 
-rewrite规则配置文件，可以使用更复杂的配置、满足复杂的使用场景。可以对路由进行详细的配置以及对请求响应做修改。rewrite规则配置的语法，跟Nginx语法非常类似。更多详细信息请查看[rewrite](../configuration/rewrite.md)。
+The rewrite rule configuration file allows you to use more complex configurations to satisfy complex usage scenarios. You can configure the route in detail and make modifications to the request response. The syntax for the rewrite rule configuration is very similar to that of the Nginx syntax. For more details, check [rewrite](../configuration/rewrite.md)。
 
-#### rewrite配置示例
+#### rewrite configuration sample
 
 ```bash
-# 全局变量
+# Global variable
 set $port 8899;
 set $ip   127.0.0.1;
 set $online 210.0.0.0;
 
-# 域名配置
+# Domain configuration
 domain example.com {
   location / {
     proxy_pass http://$online/;
@@ -147,11 +144,11 @@ domain example.com {
 }
 ```
 
-### 插件机制
+### Plugin mechanism
 
-hiproxy启动的时候，会自动从npm全局模块所在目录（`npm root -g`）查找以`hiproxy-plugin-`开头的模块，找到这些模块之后自动解析插件内容。
+When hiproxy starts, it automatically finds the module at the beginning of the `hiproxy-plugin-` from the directory in the NPM global module (`npm, root, -g`) and automatically resolve the plugin content after finding the modules.
 
-因此，我们只需要独立全局安装需要的插件，不用去升级hiproxy，hiproxy插件的开发也是独立的，插件项目本身不依赖hiproxy。
+Therefore, we only need global install plugins independently, no need to upgrade hiproxy, and the hiproxy plugin development is also independent, the plugin project itself is not dependent on hiproxy.
 
-详细的插件相关文档请查看[hiproxy插件机制](../developer/plugin.md)；
+For detailed plugin documents, check [hiproxy Plugin](../developer/plugin.md)；
 

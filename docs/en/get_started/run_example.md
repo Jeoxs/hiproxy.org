@@ -1,39 +1,37 @@
 # Run Example
 
-> 如果你愿意帮助hiproxy编写文档，请联系zdying@live.com, 谢谢！
->
 > If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!
 
-## 项目简介
+## Introduction
 
-我们准备了一个[示例工程](https://github.com/hiproxy/hiproxy-example)，里面有一个工作空间（workspace），工作空间中包含三个简单的项目。三个项目分别使用端口`8000`、`8001`和`8002`。
+Here is an [Example](https://github.com/hiproxy/hiproxy-example), with a Workspace inside, this workspace contains three basic projects, they use port `8000`, `8001` and `8002` respectively.
 
-同时，我们也提供了一个脚本`server.js`，来启动三个服务，可以使用`npm start`或者`node start`。
+Meanwhile, a script named `server.js` is provided to start those three services, use command `npm start` or `node start`
 
-这个项目的目录结构如下：
+The directory structure of this project is as follows:
 
 ```bash
 .
 ├── LICENSE
 ├── README.md
 ├── package.json
-├── start.js          # 启动服务
-└── workspace         # 工作空间
-    ├── blog-app      # blog应用示例
+├── start.js          # Service start
+└── workspace         # workspace
+    ├── blog-app      # blog app example
     │   ├── app.js    # express app
-    │   ├── hosts     # hosts文件
-    │   ├── public    # 静态资源
-    │   └── rewrite   # rewrite配置文件
-    ├── main-app      # 主应用示例
+    │   ├── hosts     # hosts file
+    │   ├── public    # static resources
+    │   └── rewrite   # rewrite file
+    ├── main-app      # main app example
     │   ├── app.js    # express app
-    │   ├── hosts     # hosts文件
-    │   └── public    # 静态资源
-    └── news-app      # 新闻应用示例
+    │   ├── hosts     # hosts file
+    │   └── public    # static resources
+    └── news-app      # news app example
         ├── app.js    # express app
-        └── hosts     # hosts文件
+        └── hosts     # hosts file
 ```
 
-在`workspace`目录下，有三个应用，每个应用都有一个`hosts`文件：
+In directory `workspace`, three apps exist, with a `hosts` file for each:
 
 ```bash
 # main-app hosts
@@ -50,7 +48,7 @@
 127.0.0.1:8002 news.example.com
 ```
 
-在blog-app中，还有一个`rewrite`文件，内容如下：
+For `blog-app`, a `rewrite` file is included:
 
 ```bash
 # rewrite rules
@@ -72,44 +70,44 @@ domain blog.example.io {
 
 ...
 
-## 运行步骤
+## STEPS
 
-### 第一步：clone代码
+### STEP 1: clone codes
 
-示例项目的代码托管在github上，首先使用Git把代码clone到本地：
+The codes of example project is hosted on github, use Git command to clone those codes local
 
 ```bash
 git clone https://github.com/hiproxy/hiproxy-example.git
 ```
 
-### 第二步：安装依赖
+### STEP 2: install dependencies
 
-然后进入项目根目录（`hiproxy-example/`），安装需要的第三方依赖：
+Enter the root directory of project `hiproxy-example/`, install all the third-party dependencies
 
 ```bash
 cd hiproxy-example
 npm install
 ```
 
-### 第三步：启动服务
+### STEP 3: start service
 
-克隆完源码并安装好依赖后，就可以启动示例项目提供的服务了。在`hiproxy-example/`下执行：
+After cloning codes and installing dependencies, start the service provided by example project. Use command in `hiproxy-example/`:
 
 ```bash
 npm start
 ```
 
-### 第四步：启动hiproxy
+### STEP 4: start hiproxy
 
-上面的准备工作完成之后，我们就可以启动hiproxy来体验他的功能了，在`hiproxy-example/`下执行：
+With all steps above done, start hiproxy to have the first taste of it. Use command in `hiproxy-example/`:
 
 ```bash
 hiproxy start --https --open --workspace ./workspace
 ```
 
-### 第五步：访问测试页面
+### STEP 5: View test page
 
-在执行上一步的命令后，hiproxy会贴心的打开一个浏览器窗口并配置好代理。在这个浏览器中访问下面任意一个网址即可查看效果：
+After running the command above, a browser window will be opened, with proxy already set. Visit any of the links below:
 
 * <http://blog.example.com/>
 * <http://www.example.com/>

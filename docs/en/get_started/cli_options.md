@@ -1,7 +1,5 @@
 # CLI options
 
-> 如果你愿意帮助hiproxy编写文档，请联系zdying@live.com, 谢谢！
->
 > If you are willing to help hiproxy to write documentation, please contact zdying@live.com, thank you!
 
 # Command Line Commands and Options
@@ -50,7 +48,7 @@ If you specify the option `--help` or `-h`, you will see the complete help infor
 
 ## start
 
-This command will start a local proxy service on the specified port. You can specify whether the service is running in the background, if running in the background, all the log of the service will be rediret to the log files.
+This command will start a local proxy service on the specified port. You can specify whether the service is running in the background, if running in the background, all the log of the service will be redirect to the log files.
 
 The log file is located in the user's home directory by default. Of course, you can specify the log file's path via the option `--log-dir <dir>`.
 
