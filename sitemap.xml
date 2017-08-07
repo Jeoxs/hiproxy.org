@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,66 +12,32 @@
     
         
     <url>
-     <loc>/get_started/introduction/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/get_started/introduction/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/get_started/installation/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/get_started/installation/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/get_started/run_example/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/get_started/run_example/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/get_started/applied_to_existing_projects/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/get_started/applied_to_existing_projects/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/get_started/cli_options/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/configuration/introduction/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/configuration/find_conf/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/configuration/hosts/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/configuration/rewrite/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/configuration/ssl_certificate/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/get_started/cli_options/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -80,42 +46,32 @@
     
         
     <url>
-     <loc>/configuration/rewrite_introduction/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/introduction/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/configuration/rewrite_scope/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/find_conf/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/configuration/rewrite_directive/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/hosts/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/configuration/rewrite_built_in_variable/</loc>
-     <lastmod>2017-08-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/api/api/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/rewrite/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/api/events/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/ssl_certificate/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -124,26 +80,26 @@
     
         
     <url>
-     <loc>/developer/plugin/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/rewrite_introduction/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/developer/cli_command/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/rewrite_scope/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/developer/directive/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/rewrite_directive/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/developer/route/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/configuration/rewrite_built_in_variable/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -152,8 +108,52 @@
     
         
     <url>
-     <loc>/faqs/</loc>
-     <lastmod>2017-08-03</lastmod>
+     <loc>/zh/api/api/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zh/api/events/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/zh/developer/plugin/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zh/developer/cli_command/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zh/developer/directive/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/zh/developer/route/</loc>
+     <lastmod>2017-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/zh/faqs/</loc>
+     <lastmod>2017-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
