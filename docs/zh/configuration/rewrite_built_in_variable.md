@@ -45,6 +45,12 @@ hiproxy内置了一些变量，这些内置变量可以在相应的作用域中�
 ### $path_name
 请求的`path_name`（不包括参数），比如`/docs/index.html`。
 
+### $base_name
+请求path的最后一部分，比如path为`/docs/index.html`，则$base_name为`index.html`。
+
+### $dir_name
+请求path的目录名称，比如path为`/docs/index.html`，则$dir_name为`/docs/`。
+
 ### $hash
 请求url中的`hash`(包括`#`)，比如'#get-started'。
 
@@ -62,4 +68,3 @@ hiproxy内置了一些变量，这些内置变量可以在相应的作用域中�
 
 ### $arg_*name*
 请求参数的值，`name`表示字段名称，这个名称中的大写字母都改成了小写，`-`替换成了`_`。比如请求参数为`?from=google&v=_1847295727524`，可以通过`$arg_from`来获取`from`的值。
-
