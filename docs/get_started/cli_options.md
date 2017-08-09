@@ -44,7 +44,7 @@ If you specify the option `--help` or `-h`, you will see the complete help infor
     -h, --help        Display help information
     --log-dir <dir>   The log directory when run in background, default: user home directory
     --log-time        Show time info before every log message
-    --log-level       The log levels, format: <level1>[,<lavel2[,...]]
+    --log-level       The log levels, format: <level1>[,<lavel2[,...]] available parameters : log info warn error debug detail
     --grep <content>  Filter the log data
 ```
 
